@@ -1,9 +1,7 @@
 import { GraduationCap, Target, Code2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 const About = () => {
-  return (
-    <section id="about" className="bg-secondary">
+  return <section id="about" className="bg-secondary">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fade-in">
@@ -18,9 +16,7 @@ const About = () => {
                   <GraduationCap className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Education</h3>
-                <p className="text-muted-foreground text-sm">
-                  B.Tech in CSE (AI & ML) at ACE Engineering College
-                </p>
+                <p className="text-muted-foreground text-sm">B.Tech in CSE (DS) at Samskruti Engineering College</p>
               </CardContent>
             </Card>
 
@@ -30,9 +26,7 @@ const About = () => {
                   <Code2 className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Specialization</h3>
-                <p className="text-muted-foreground text-sm">
-                  Artificial Intelligence & Machine Learning
-                </p>
+                <p className="text-muted-foreground text-sm">Data Science</p>
               </CardContent>
             </Card>
 
@@ -51,25 +45,12 @@ const About = () => {
 
           <Card className="border-none shadow-lg animate-fade-in">
             <CardContent className="pt-8">
-              <p className="text-lg leading-relaxed text-muted-foreground mb-4">
-                I'm a passionate Computer Science Engineering student at ACE Engineering College, 
-                specializing in Artificial Intelligence and Machine Learning. My journey in tech 
-                began with a curiosity about how intelligent systems work and has evolved into a 
-                deep commitment to creating innovative solutions.
-              </p>
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                I'm constantly exploring new technologies, working on exciting projects, and honing 
-                my skills in both AI/ML and web development. My goal is to leverage the power of 
-                artificial intelligence to solve real-world problems and create meaningful impact 
-                through technology. I'm actively seeking opportunities to collaborate on challenging 
-                projects and contribute to cutting-edge developments in the field.
-              </p>
+              <p className="text-lg leading-relaxed text-muted-foreground mb-4">I'm a passionate Computer Science Engineering student at Samskruti Engineering College, specializing in Data Science. My journey in tech began with a curiosity about how intelligent systems work and has evolved into a deep commitment to creating innovative solutions.</p>
+              <p className="text-lg leading-relaxed text-muted-foreground">I'm constantly exploring new technologies, working on exciting projects, and honing my skills in both AI&DS and web development. My goal is to leverage the power of artificial intelligence to solve real-world problems and create meaningful impact through technology. I'm actively seeking opportunities to collaborate on challenging projects and contribute to cutting-edge developments in the field.</p>
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

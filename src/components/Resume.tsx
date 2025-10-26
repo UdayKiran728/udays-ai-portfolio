@@ -1,15 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Download, FileText } from "lucide-react";
-
 const Resume = () => {
   const handleDownload = () => {
     // This would be replaced with actual resume file
     alert("Resume download would start here. Please add your resume PDF to the public folder.");
   };
-
-  return (
-    <section id="resume" className="bg-background">
+  return <section id="resume" className="bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fade-in">
           Resume
@@ -32,11 +29,7 @@ const Resume = () => {
                 Available in PDF format for easy viewing and printing.
               </p>
 
-              <Button 
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-white font-medium"
-                onClick={handleDownload}
-              >
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-medium" onClick={handleDownload}>
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume (PDF)
               </Button>
@@ -46,12 +39,13 @@ const Resume = () => {
                 <div className="grid md:grid-cols-2 gap-4 text-left">
                   <div>
                     <p className="text-sm font-medium text-accent mb-2">Education</p>
-                    <p className="text-sm text-muted-foreground">B.Tech in CSE (AI & ML)</p>
+                    <p className="text-sm text-muted-foreground">B.Tech in CSE (DS)</p>
                     <p className="text-sm text-muted-foreground">ACE Engineering College</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-accent mb-2">Focus Areas</p>
-                    <p className="text-sm text-muted-foreground">Artificial Intelligence</p>
+                    <p className="text-sm text-muted-foreground">Artificial Intelligence
+Data Science</p>
                     <p className="text-sm text-muted-foreground">Web Development</p>
                   </div>
                   <div>
@@ -70,8 +64,6 @@ const Resume = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Resume;

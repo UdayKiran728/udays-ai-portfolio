@@ -6,51 +6,51 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Send, Mail, MapPin, Phone } from "lucide-react";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
         description: "Please fill in all fields.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        description: "Thank you for reaching out. I'll get back to you soon!"
       });
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
       setIsSubmitting(false);
     }, 1000);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <section id="contact" className="bg-secondary">
+  return <section id="contact" className="bg-secondary">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fade-in">
           Get In Touch
@@ -75,9 +75,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-accent transition-colors">
-                        contact@example.com
-                      </a>
+                      <a href="mailto:contact@example.com" className="text-muted-foreground hover:text-accent transition-colors">udaykirangudelli@gmail.com</a>
                     </div>
                   </div>
 
@@ -115,65 +113,30 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="mt-1"
-                    required
-                  />
+                  <Input id="name" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} className="mt-1" required />
                 </div>
 
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="mt-1"
-                    required
-                  />
+                  <Input id="email" name="email" type="email" placeholder="your.email@example.com" value={formData.email} onChange={handleChange} className="mt-1" required />
                 </div>
 
                 <div>
                   <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Your message here..."
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="mt-1 min-h-[150px]"
-                    required
-                  />
+                  <Textarea id="message" name="message" placeholder="Your message here..." value={formData.message} onChange={handleChange} className="mt-1 min-h-[150px]" required />
                 </div>
 
-                <Button 
-                  type="submit"
-                  className="w-full bg-accent hover:bg-accent/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
+                <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : <>
                       <Send className="w-4 h-4 mr-2" />
                       Send Message
-                    </>
-                  )}
+                    </>}
                 </Button>
               </form>
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
